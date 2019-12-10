@@ -12,16 +12,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
     {% if title %}
-      <title>My_blog - {{ title }}</title>
+      <title>My blog - {{ title }}</title>
     {% else %}
-      <title>My_blog</title>
+      <title>My blog</title>
     {% endif %}
   </head>
   <body>
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">My_blog</a>
+          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">My blog</a>
           <div class="collapse navbar-collapse">
             <!-- Nav left -->
             <div class="navbar-nav mr-auto">
@@ -31,7 +31,7 @@
             <!-- Nav right -->
             <div class="navbar-nav">
               <a class="nav-item nav-link" href="#">Login</a>
-              <a class="nav-item nav-link" href="#">Register</a>
+              <a class="nav-item nav-link" href="{% url 'user-register' %}">Register</a>
             </div>
           </div>
         </div>
