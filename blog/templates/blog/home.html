@@ -10,7 +10,7 @@
           <small class="text-muted">{{ post.date_posted|date:"d F, Y \a\t G:i" }}</small>
         </div>
         <h2>
-          <a class="article-title" href="#">{{ post.title }}</a>
+          <a class="article-title" href="{% url 'blog-post_detail' post.slug %}">{{ post.title }}</a>
         </h2>
         <p class="article-content">{{ post.content }}</p>
       </div>
