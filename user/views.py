@@ -13,11 +13,14 @@ def register(request):
             return redirect('user-login')
     else:
         form = UserRegisterForm()
-    return render(request, 'user/register.html', {'form': form})
+    context = {
+        'form': form
+    }
+    return render(request, 'user/register.html', context)
 
 @login_required
 def profile(request):
-    if request.method =='POST':
+    if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
         if u_form.is_valid() and p_form.is_valid():
